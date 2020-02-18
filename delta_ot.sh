@@ -1,5 +1,4 @@
 _tp_bin="/usr/sap/trans/bin"
-_log_mail="/usr/sap/trans/bin/Script/liste_OT.version"
 _tp_cmd="/usr/sap/${SAPSYSTEMNAME}/SYS/exe/run/tp"
 _tp_profile="$_tp_bin/TP_DOMAIN_SD1.PFL"
 
