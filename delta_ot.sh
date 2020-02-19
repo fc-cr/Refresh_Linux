@@ -29,16 +29,28 @@ do
 
     tp addtobuffer $_OT $SAPSYSTEMENAME pf=$_tp_profile
     _CR=$?
-    if [[ $_CR -gt 7 ]] && [[ ! -z _$CRatt ]] && [[ $_CR -ne _CRatt ]] ;then
+    if [[ $_CR -gt 7 ]];then
+        if [[ ! -z _$CRatt ]];then
+            if [[ $_CR -ne _CRatt ]];then
                 echo "$_OT en erreur $_CR sur $SAPSYSTEMENAME"
                 exit $_CR
+            fi
+        else
+            exit $_CR
+        fi
     fi
 
     tp import $_OT $_SID u1234 pf=$_tp_profile
 
-    if [[ $_CR -gt 7 ]] && [[ ! -z _$CRatt ]] && [[ $_CR -ne _CRatt ]] ;then
+    if [[ $_CR -gt 7 ]];then
+        if [[ ! -z _$CRatt ]];then
+            if [[ $_CR -ne _CRatt ]];then
                 echo "$_OT en erreur $_CR sur $SAPSYSTEMENAME"
                 exit $_CR
+            fi
+        else
+            exit $_CR
+        fi
     fi
     echo "$_OT transporté avec CR $_CR"
 
